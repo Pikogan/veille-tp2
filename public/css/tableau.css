@@ -1,0 +1,63 @@
+.tableau {
+  border-collapse: collapse;
+  margin: 10px;
+  border: 1px solid #bbb;
+}
+.tableau td,
+.tableau th {
+  border: 1px dotted #ccc;
+  padding: 5px;
+  font-size: .5em;
+}
+.tableau td a,
+.tableau th a {
+  display: block;
+  color: #0a0;
+  text-decoration: none;
+  background-color: #bfb;
+  padding: 3px;
+  border-radius: 19%;
+  font-size: 1.5em;
+}
+.tableau td a.detruire,
+.tableau th a.detruire {
+  background-color: #fce9e2;
+  color: #f00;
+}
+.tableau td a.modifier,
+.tableau th a.modifier {
+  background-color: #defff2;
+  color: #11b911;
+}
+.tableau td a:hover,
+.tableau th a:hover {
+  background-color: #aaa;
+  color: #555;
+}
+.tableau th {
+  background-color: #ddd;
+}
+.tableau td:nth-child(1),
+.tableau th:nth-child(1),
+.tableau td:nth-child(5),
+.tableau th:nth-child(5) {
+  display: none;
+}
+@media all and (min-width: 710px) {
+  .tableau td,
+  .tableau th {
+    border: 1px dotted #ccc;
+    padding: 5px;
+    font-size: .8em;
+  }
+  .tableau td:nth-child(1),
+  .tableau th:nth-child(1),
+  .tableau td:nth-child(5),
+  .tableau th:nth-child(5) {
+    display: table-cell;
+  }
+}
+.mon_formulaire input {
+  height: 1.5em;
+  font-size: .6em;
+}

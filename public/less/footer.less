@@ -1,0 +1,45 @@
+
+
+@import "variables.less"; 
+
+/* @couleur-footer;  */
+
+.pied-page {
+
+    flex-direction :  column;
+    justify-content: space-around;
+    	    margin:0;
+	    padding : 0;
+
+	 ul {
+
+	    list-style-type: none;
+	    margin:0;
+	    padding : 0;
+
+
+
+		 li {
+		        font-size :  1em;
+		        list-style-type: none;
+
+		        a {
+		        	display : block;
+		        text-decoration : none;  
+		        padding: 5px;
+		        border-bottom: 1px dotted @couleur-footer;
+			        &:hover{
+			        	color : #be4509;
+			        }
+		     	}
+		    }
+		}
+
+	}
+
+
+@media all and (min-width:500px){
+    .pied-page{
+        flex-direction :  row;
+    }
+}

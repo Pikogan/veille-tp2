@@ -1,0 +1,17 @@
+/* @couleur-footer;  */
+.formulaire {
+  display: none;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+.formulaire input {
+  margin: 10px;
+}
+@media all and (min-width: 500px) {
+  .formulaire {
+    flex-direction: column;
+  }
+}

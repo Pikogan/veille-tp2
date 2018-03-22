@@ -1,0 +1,21 @@
+{
+  "name": "veille-node-5",
+  "version": "1.0.0",
+  "description": "Exercice #5 sur Express et EJS",
+  "main": "01_app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Express",
+    "EJS"
+  ],
+  "author": "Eddy Martin",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "mongodb": "^3.0.2"
+  }
+}

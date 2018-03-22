@@ -1,0 +1,151 @@
+
+@couleur_lien : #4c7299;
+
+
+.couleur-menu {
+		display : flex;
+		flex-direction: column;
+
+		#burger {
+			display: none;
+		}
+/* ///////////////////////////////////////////  Gestion du burger */
+
+		#burger + label {
+			position : absolute;
+			right:  : 20px;
+			display : block;
+			border : 2px solid #aaa;
+			padding:2px;
+			border-radius: 10%;
+			width : 1.5em;
+			height : 1.5em;
+		}
+
+		#burger:checked + label svg:nth-child(1)
+		{
+			display:block;
+		}
+		#burger:checked + label svg:nth-child(2)
+		{
+			display:none;
+		}
+		#burger + label svg:nth-child(1)
+		{
+			display:none;
+		}
+		#burger + label svg:nth-child(2)
+		{
+			display:block;
+		}
+
+		#burger ~ #menu > nav {
+					position: absolute;
+					background-color : #ccc;
+					width : 200px;
+					left : 50px;
+					top:-112px;
+					padding : 10px;
+				}
+		#burger:checked ~ #menu > nav{
+					top:0px;
+				}
+/* ///////////////////////////////////////////////////////// recherche */
+
+		.recherche {
+			display : flex;
+			justify-content: flex-end;
+			margin-right: 10px;
+			height: 1.8em;
+			button {
+					color : darken(@couleur_lien, 20%) ;
+					font-size : 1.0em;
+				}
+
+			input {
+				border : 1px solid #aaa;
+				padding-left : 5px;
+			}	
+		}
+
+
+#menu nav {
+  display : flex;
+  flex-direction: column;
+
+  a {
+  		color : @couleur_lien ;
+		text-decoration :  none;
+		padding : 1%;
+  	}
+  }
+} // .couleur-menu
+///////////////////////////////////////////////////////////// @media - min-width 700px
+	@media all and (min-width:700px){
+
+		.couleur-menu {
+		display : flex;
+		flex-direction: row;
+		padding: 20px 0 20px 0;
+		
+		#burger + label {
+				display : none;
+			}
+
+
+		#burger ~  #menu {
+		display : flex;
+	    flex-direction :  row;	
+	    justify-content: space-between;
+		width: 100%;
+		background-color : #fff;
+			.recherche {
+				display : flex;
+				justify-content: flex-end;
+				margin-right: 10px;
+				height: 1.8em;
+			}
+		}	
+
+		#burger ~ #menu > nav{
+		 position : static;
+		 display : flex;
+		 position: static;
+    	width: 100%;
+    	justify-content: flex-start;
+    	flex-direction : row;
+    	background-color : #fff;
+		
+
+					a {
+				display : flex;
+				justify-content: space-between;
+				width : 20%; 
+	    		padding-right: 7%;
+	    		padding-left: 7%;
+				.fa {
+					color :  @couleur_lien;
+					min-width : 1em;
+					min-width: 38%;
+				}
+			}
+			a:hover {
+				background-color: #bbb;
+				color : darken(@couleur_lien, 20%) ;
+					.fa {
+					color : darken(@couleur_lien, 20%) ;
+				}
+			}
+	
+
+	    
+
+
+		}// fin .menu
+	}// couleur-menu
+	} // @media
+
+
+
+
+	

@@ -1,0 +1,21 @@
+[
+   {      
+     "nom" : "Eddy Martin",
+     "telephone" : "514-123-9834",
+     "courriel" : "eddy@gmail.com",
+     "id": 1    
+   },
+   {  
+     "nom" : "Claude Fortin",
+     "telephone" : "514-111-9114",
+     "courriel" : "claude@gmail.com",
+     "id": 2   
+   },
+   { 
+     "nom" : "Luc Marcil",
+     "telephone" : "514-222-9233",
+     "courriel" : "luc@gmail.com",
+     "id": 3    
+   }
+]
+

@@ -1,0 +1,68 @@
+<%
+    let objOrdre = {
+        _id : 'asc',
+        nom : 'asc',        
+        prenom : 'asc',
+        telephone : 'asc',
+        courriel : 'asc'
+    }
+    
+    if (typeof cle !== 'undefined'  && cle)
+        {
+            objOrdre[cle] = ordre
+        }
+%>
+
+
+<table class="tableau">
+    <tr>
+        <th><a href="/trier/_id/<%= objOrdre._id %>">_id<i class="fas fa-<%= (objOrdre._id=='asc'?'sort-up': 'sort-down') %>"></i></a></th>
+        <th><a href="/trier/nom/<%= objOrdre.nom %>">Nom<i class="fas fa-<%= (objOrdre.nom=='asc'?'sort-up': 'sort-down') %>"></i></a></th>
+        <th><a href="/trier/prenom/<%= objOrdre.prenom %>">Prenom<i class="fas fa-<%= (objOrdre.prenom=='asc'?'sort-up': 'sort-down') %>"></i></a></th>        
+        <th><a href="/trier/telephone/<%= objOrdre.telephone %>">Téléphone<i class="fas fa-<%= (objOrdre.telephone=='asc'?'sort-up': 'sort-down') %>"></i></a></th>  
+        <th><a href="/trier/courriel/<%= objOrdre.courriel %>">Courriel<i class="fas fa-<%= (objOrdre.courriel=='asc'?'sort-up': 'sort-down') %>"></i></a></th>      
+    </tr>
+    <%  for (elm of adresses) {%>
+    <tr>
+        <td><%= elm._id %></td>
+        <td contenteditable='true'><%= elm.nom %></td>
+        <td contenteditable='true'><%= elm.prenom %></td>
+        <td contenteditable='true'><%= elm.telephone %></td>                
+        <td contenteditable='true'><%= elm.courriel %></td>    
+        <td><a class="detruire" href="/detruire/<%= elm._id %>"><i class="fas fa-trash-alt" aria-hidden="true"></i></a></td>
+        <td><a class='modifier' href="#"><i class="far fa-save" aria-hidden="true"></i></a></td>
+    </tr>
+    <% } %>
+</table>
+
+
+
+<script type="text/javascript">
+    let elmModifier = document.querySelectorAll('.modifier')
+    console.log(elmModifier.length)
+    for (elm of elmModifier)
+        {
+            elm.addEventListener('click', function(){
+            console.log(this.parentElement.parentElement.id)
+            let elmTr = this.parentElement.parentElement 
+            let _id = elmTr.querySelector('td:nth-child(1)').innerHTML
+            let nom = elmTr.querySelector('td:nth-child(2)').innerHTML
+            let prenom = elmTr.querySelector('td:nth-child(3)').innerHTML
+            let telephone = elmTr.querySelector('td:nth-child(4)').innerHTML
+            let courriel = elmTr.querySelector('td:nth-child(5)').innerHTML
+
+            elmForm = document.getElementById('frmUpdate')
+
+            elmForm.nom.value = nom
+            elmForm.prenom.value = prenom
+            elmForm.telephone.value = telephone
+            elmForm.courriel.value = courriel
+            elmForm._id.value =  _id
+            elmForm.submit()
+            })
+        }
+
+
+
+</script>
+
