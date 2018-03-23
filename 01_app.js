@@ -13,6 +13,17 @@ const ObjectID = require('mongodb').ObjectID;
 app.use(bodyParser.urlencoded({extended: true}))
 
 app.use(express.static('public'));
+const i18n = require('i18n');
+const cookieParser = require('cookie-parser');
+
+/* Ajoute l'objet i18n à l'objet global «res» */
+app.use(cookieParser());
+app.use(i18n.init);
+
+i18n.configure({ 
+   locales : ['fr', 'en'],
+   cookie : 'langueChoisie', 
+   directory : __dirname + '/locales' })
 
 let db 
 
