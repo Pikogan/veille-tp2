@@ -16,11 +16,11 @@
 
 <table class="tableau">
     <tr>
-        <th><a href="/trier/_id/<%= objOrdre._id %>">_id<i class="fas fa-<%= (objOrdre._id=='asc'?'sort-up': 'sort-down') %>"></i></a></th>
-        <th><a href="/trier/nom/<%= objOrdre.nom %>">Nom<i class="fas fa-<%= (objOrdre.nom=='asc'?'sort-up': 'sort-down') %>"></i></a></th>
-        <th><a href="/trier/prenom/<%= objOrdre.prenom %>">Prenom<i class="fas fa-<%= (objOrdre.prenom=='asc'?'sort-up': 'sort-down') %>"></i></a></th>        
-        <th><a href="/trier/telephone/<%= objOrdre.telephone %>">Téléphone<i class="fas fa-<%= (objOrdre.telephone=='asc'?'sort-up': 'sort-down') %>"></i></a></th>  
-        <th><a href="/trier/courriel/<%= objOrdre.courriel %>">Courriel<i class="fas fa-<%= (objOrdre.courriel=='asc'?'sort-up': 'sort-down') %>"></i></a></th>      
+        <th><a href="/trier/_id/<%= objOrdre._id %>"><%= __('id') %><i class="fas fa-<%= (objOrdre._id=='asc'?'sort-up': 'sort-down') %>"></i></a></th>
+        <th><a href="/trier/nom/<%= objOrdre.nom %>"><%= __('nom') %><i class="fas fa-<%= (objOrdre.nom=='asc'?'sort-up': 'sort-down') %>"></i></a></th>
+        <th><a href="/trier/prenom/<%= objOrdre.prenom %>"><%= __('prenom') %><i class="fas fa-<%= (objOrdre.prenom=='asc'?'sort-up': 'sort-down') %>"></i></a></th>        
+        <th><a href="/trier/telephone/<%= objOrdre.telephone %>"><%= __('telephone') %><i class="fas fa-<%= (objOrdre.telephone=='asc'?'sort-up': 'sort-down') %>"></i></a></th>  
+        <th><a href="/trier/courriel/<%= objOrdre.courriel %>"><%= __('courriel') %><i class="fas fa-<%= (objOrdre.courriel=='asc'?'sort-up': 'sort-down') %>"></i></a></th>        
     </tr>
     <%  for (elm of adresses) {%>
     <tr>
