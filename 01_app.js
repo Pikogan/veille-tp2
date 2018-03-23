@@ -45,11 +45,26 @@ Les routes
 ////////////////////////////////////////// Route /
 app.set('view engine', 'ejs'); // générateur de template
 
+app.get('/:locale(en|fr)',  (req, res) => {
+  // on récupère le paramètre de l'url pour enregistrer la langue
+
+  res.setLocale(req.params.locale)
+  res.cookie('langueChoisie', req.params.locale)
+
+  // on peut maintenant traduire
+  //console.log('Cookies: ', req.cookies.langueChoisie);
+
+  res.redirect(req.get("referer"))
+  //res.render('accueil.ejs') 
+})
+
+
+////////////////////////////////////////////
 app.get('/', function (req, res) {
-      
- res.render('accueil.ejs')  
+
+	res.render('accueil.ejs')  
  
-  });
+});
 
 //////////////////////////////////////////  Route Adresse
 app.get('/adresse', function (req, res) {
