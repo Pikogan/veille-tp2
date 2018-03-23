@@ -1,6 +1,6 @@
 /* @couleur-footer;  */
 .formulaire {
-  display: none;
+  display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
@@ -9,6 +9,7 @@
 }
 .formulaire input {
   margin: 10px;
+  width: 80px;
 }
 @media all and (min-width: 500px) {
   .formulaire {

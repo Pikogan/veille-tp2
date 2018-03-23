@@ -2,22 +2,26 @@ const express = require('express');
 const fs = require('fs')
 const util = require("util");
 const app = express();
+
+var server = require('http').createServer(app);
+var io = require('./mes_modules/chat_socket').listen(server);
+
 const peupler = require('./mes_modules/peupler')
 const bodyParser= require('body-parser')
 const MongoClient = require('mongodb').MongoClient // le pilote MongoDB
 const ObjectID = require('mongodb').ObjectID;
 app.use(bodyParser.urlencoded({extended: true}))
-/* on associe le moteur de vue au module «ejs» */
+
 app.use(express.static('public'));
 
-let db // variable qui contiendra le lien sur la BD
+let db 
 
 MongoClient.connect('mongodb://127.0.0.1:27017', (err, database) => {
  if (err) return console.log(err)
  db = database.db('carnet_adresse')
 
 // lancement du serveur Express sur le port 8081
- app.listen(8081, () => {
+server.listen(8081, () => {
  console.log('connexion à la BD et on écoute sur le port 8081')
  })
 })
@@ -119,21 +123,9 @@ app.get('/trier/:cle/:ordre', (req, res) => {
 /////////////////////////////////////////////////////////  Route /peupler
 app.get('/peupler', (req, res) => {
 	let collectionMembre = peupler()
-	/*
-	for (elm of tabMembre)
-	{
-	let cursor = db.collection('adresse').save(elm, (err, res)=>{
-		if(err) console.error(err)
-			console.log('ok')
-
-		})
-	}
-	*/
 
 	let cursor = db.collection('adresse').insertMany(collectionMembre, (err, resultat)=>{
 		if(err) console.error(err)
-			// console.log('ok')
-			// console.log(util.inspect(resultat))
 			res.redirect('/adresse')
 		})
 })
@@ -147,6 +139,10 @@ app.get('/vider', (req, res) => {
 			
 		})
 	res.redirect('/adresse')
+})
+
+app.get('/chat', (req, res) => {
+	res.render('socket_vue.ejs')
 })
 
 
