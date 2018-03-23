@@ -1,8 +1,10 @@
 {
 	"accueil" : "Homepage",
 	"vider" : "Empty",
+	"chat" : "Chatting",
 	"adresse" : "Addresses",
 	"langue" : "Français",
+	"peuple" : "Populate",
 
 	"progVeille" : "Programming and technology watch",
 	"TIMcm" : "TIM cmaisonneuve",

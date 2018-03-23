@@ -1,8 +1,10 @@
 {
 	"accueil" : "Accueil",
 	"vider" : "Vider",
+	"chat" : "Clavardage",
 	"adresse" : "Adresses",
-	"langue" : "English",
+	"langue" : "Anglais",
+	"peuple" : "Peupler",
 
 	"progVeille" : "Programmation et veille technologique",
 	"TIMcm" : "TIM cmaisonneuve",
