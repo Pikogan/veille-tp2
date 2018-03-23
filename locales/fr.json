@@ -1,10 +1,22 @@
 {
-    "courriel":"courriel",
-    "accueil":"Accueil",
-    "vider":"Vider",
-    "Nom":"Nom",
-    "Prenom":"Prenom",
-    "Téléphone":"Téléphone",
-    "Courriel":"Courriel",
-    "Francais":"Francais"
+	"accueil" : "Accueil",
+	"vider" : "Vider",
+	"adresse" : "Adresses",
+	"langue" : "English",
+
+	"progVeille" : "Programmation et veille technologique",
+	"TIMcm" : "TIM cmaisonneuve",
+	"CdM" : "Collège de Maisonneuve",
+	"officiel" : "Le site officiel de Node.js",
+	"fondationNode" : "Fondation Node.js",
+	"fondationLinux" : "Fondation Linux",
+	"sgbd" : "SGBD noSQL mongoDB",
+	"telechargeMongo" : "Télécharger mongoDB",
+	"npm" : "NPM",
+
+	"id" : "_id",
+	"nom" : "Nom",
+	"prenom" : "Prenom",
+	"telephone" : "Téléphone",
+	"courriel" : "Courriel"
 }
