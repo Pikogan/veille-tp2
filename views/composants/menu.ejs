@@ -4,6 +4,7 @@
 			 <a href='/vider'><i class="fa fa-industry" aria-hidden="true"></i>Vider</a>
 			 <a href='/chat'><i class="fa fa-industry" aria-hidden="true"></i>Clavardage</a>
 			 <a href='/adresse'><i class="fa fa-graduation-cap" aria-hidden="true"></i>Adresse</a>
+			 <a href='/peupler'><i class="fa fa-keyboard-o" aria-hidden="true"></i>Peupler</a>
 
 			 <% 
 						if (getLocale() == "fr"){
@@ -14,8 +15,7 @@
 							<a href=<%= language %>><%= __('langue') %></a>
 						<% }
 					%>
-			 
-			 <a href='/peupler'><i class="fa fa-keyboard-o" aria-hidden="true"></i>Peupler</a>
+
 			 <form class='recherche' action='rechercher' method="post" name="recherche" id="recherche">
 		    	<input type="text" name="recherche" 
 		    	value="<%= (typeof recherche == 'undefined')? '' : recherche %>">
